@@ -1,8 +1,9 @@
 import discord
 from discord.ext import commands
 
-description = '''This is a bot make for Pawed.space only.
-For more detail, contact http://t.me/allen0099'''
+description = '''This is a bot made for the Pawed.space\n
+For more detail, please contact http://t.me/allen0099'''
+
 bot = commands.Bot(command_prefix='!', description=description)
 token = '*'
 
