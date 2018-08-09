@@ -1,13 +1,13 @@
-import discord
 from discord.ext import commands
+from draw import ToS
+import os
 
-import os # for importing env vars 
+token = os.environ['Bot_Token']  # token here
 
 description = '''This is a bot made for the Pawed.space\n
 For more detail, please contact http://t.me/allen0099'''
 
 bot = commands.Bot(command_prefix='!', description=description)
-token = os.environ['Bot_Token']
 
 
 @bot.event
@@ -18,8 +18,15 @@ async def on_ready():
     print('------')
 
 
-@commands.command()
-async def echo():
-    pass
+@bot.command()
+async def meow():
+    await bot.say('meow')
+
+
+@bot.command()
+async def draw():
+    t = ToS()
+    await bot.say('{}'.format(t.draw()[0]))
+
 
 bot.run(token)
