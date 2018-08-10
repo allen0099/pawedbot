@@ -1,5 +1,5 @@
 from discord.ext import commands
-from draw import ToS
+from draw import ToS, Dinner
 import os
 
 token = os.environ['Bot_Token']  # token here
@@ -27,6 +27,9 @@ async def meow():
 async def draw():
     t = ToS()
     await bot.say('{}'.format(t.draw()[0]))
-
+    
+@bot.command()
+async def dinner():
+    await bot.say(Dinner().draw())
 
 bot.run(token)
