@@ -1,4 +1,4 @@
-from random import choices
+from random import choice, choices
 from ast import literal_eval
 
 class ToS:
@@ -16,4 +16,4 @@ class Dinner(object):
         self.__food_list = literal_eval( open('weird_food.txt', 'r').read() )
     
     def draw(self):
-        return choices(self.__food_list)
+        return choice(self.__food_list)
