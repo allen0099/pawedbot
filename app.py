@@ -25,11 +25,12 @@ async def meow():
 
 @bot.command()
 async def draw():
-    t = ToS()
-    await bot.say('{}'.format(t.draw()[0]))
-    
+    await bot.say('{}'.format(ToS().draw()[0]))
+
+
 @bot.command()
 async def dinner():
     await bot.say(Dinner().draw())
+
 
 bot.run(token)
